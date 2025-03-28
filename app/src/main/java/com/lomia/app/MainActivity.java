@@ -14,8 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
@@ -33,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView weatherIcon = null;
     private ProgressBar loading = null;
     private SharedPreferences sharedPreferences = null;
-
-    private final String API_KEY = "fe8a2b22bda539b818c00933bcd6536c";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void getWeatherInfo(String city) {
         loading.setVisibility(View.VISIBLE);
+        String apiKey = BuildConfig.API_KEY;
         String url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" +
-                API_KEY + "&units=metric";
+                apiKey + "&units=metric";
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
