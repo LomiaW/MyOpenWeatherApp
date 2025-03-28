@@ -1,0 +1,1 @@
+This is a simple school project from course MAP524
