@@ -1,1 +1,1 @@
-This is a simple school project from course MAP524
+This is a simple project from course MAP524, Seneca
